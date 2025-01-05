@@ -1,0 +1,27 @@
+# theme and appearance
+theme = tokyonight_night
+font-family = "JetBrains Mono"
+# minimum-contrast = 1.1
+unfocused-split-opacity = 0.65
+background-opacity = 0.75
+background-blur-radius = 25
+
+# window style
+macos-titlebar-style = tabs
+window-colorspace = display-p3
+window-padding-x = 20
+window-padding-y = 20
+window-height = 100
+window-width = 200
+
+# cursor style
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false
+
+# behaviour
+quit-after-last-window-closed = true
+
+# macos security features
+macos-auto-secure-input = true
+macos-secure-input-indication = true
