@@ -19,9 +19,13 @@ if [[ -n $(git ls-files --others --exclude-standard) || \
       -n $(git diff --cached --name-only) || \
       -n $(git ls-files --unmerged) ]]; then
     echo "Changes found."
+    if [ -z "$1" ]; then
+        echo "Error: Commit message required."
+        exit 1
+    fi
     git add .
-    git commit -m $1
-    git push
+    git commit -m "$1"
+    git push origin main
     echo "Changes pushed to git repo, with message: $1."
 else
     echo "All files up to date."
