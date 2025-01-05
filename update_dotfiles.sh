@@ -1,32 +1,40 @@
 #!/bin/bash
 
-cp \
-	~/.config/ghostty/config \
-	~/.hushlogin \
-	~/.config/fastfetch/config.jsonc \
-	~/.config/nvim/init.lua \
-	~/.config/nvim/lua/custom/plugins/init.lua \
-	~/.config/nvim/lua/custom/plugins/lualine.lua \
-	~/.config/nvim/lua/custom/plugins/render-markdown.lua \
-	~/.config/starship.toml \
-	~/.config/wezterm/wezterm.lua \
-	./
+RED="\033[31m"
+GREEN="\033[32m"
+YELLOW="\033[33m"
+BLUE="\033[34m"
+BOLD="\033[1m"
+RESET="\033[0m"  # Reset all attributes
 
-echo "Files copied."
+# copy all dotfiles to destination
+cp ~/.config/ghostty/config ./ghostty_config
+cp ~/.config/fastfetch/config.jsonc ./fastfetch_config.jsonc
+cp ~/.config/nvim/init.lua ./nvim/init.lua
+cp ~/.config/nvim/lua/custom/plugins/init.lua ./nvim/plugins/init.lua
+cp ~/.config/nvim/lua/custom/plugins/lualine.lua ./nvim/plugins/lualine.lua
+cp ~/.config/nvim/lua/custom/plugins/render-markdown.lua ./nvim/plugins/render-markdown.lua
+cp ~/.hushlogin ./.hushlogin
+cp ~/.config/starship.toml ./starship.toml
+cp ~/.config/wezterm/wezterm.lua ./wezterm.lua
 
+echo -e "${BOLD}${GREEN}Files copied.${RESET}"
+
+# check if files changed since last merge
 if [[ -n $(git ls-files --others --exclude-standard) || \
       -n $(git diff --name-only) || \
       -n $(git diff --cached --name-only) || \
       -n $(git ls-files --unmerged) ]]; then
-    echo "Changes found."
+    echo -e "${BOLD}${BLUE}Changes found.${RESET}"
+    # check if commit message provided before committing
     if [ -z "$1" ]; then
-        echo "Error: Commit message required."
+        echo -e "${BOLD}${RED}Error: Commit message required.${RESET}"
         exit 1
     fi
     git add .
     git commit -m "$1"
     git push origin main
-    echo "Changes pushed to git repo, with message: $1."
+    echo -e "${BOLD}${GREEN}Changes pushed to git repo, with message: $1.${RESET}"
 else
-    echo "All files up to date."
+    echo -e "${BOLD}${BLUE}All files up to date.${RESET}"
 fi
