@@ -31,6 +31,7 @@ if [[ -n $(git ls-files --others --exclude-standard) || \
         echo -e "${BOLD}${RED}Error: Commit message required.${RESET}"
         exit 1
     fi
+    # commit changes to remote repo
     git add .
     git commit -m "$1"
     git push origin main

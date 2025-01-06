@@ -7,14 +7,9 @@ local config = {} -- wezterm.config_builder()
 -- Set font size
 config.font_size = 13
 
-config.colors = {
-	-- The default background color
-	background = "black",
-}
-
 -- changing the color scheme, background opacity, nvim opacity
 config.color_scheme = "tokyonight_night"
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.75
 config.macos_window_background_blur = 25
 config.text_background_opacity = 0.6
 
@@ -25,7 +20,7 @@ config.text_background_opacity = 0.6
 config.keys = {
 	-- This will create a new split and run your default program inside it
 	{
-		key = '"',
+		key = "d",
 		mods = "CMD",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
