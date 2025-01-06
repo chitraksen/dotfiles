@@ -5,7 +5,7 @@ chmod +x update_dotfiles.sh
 ./update_dotfiles.sh
 ```
 
-# concept
+# idea
 - watch youtube video about gnu stow to manage dotfiles
 - too complicated, this should be easier
 - just write small shell script to copy over all files to repo and sync if changes found
