@@ -263,6 +263,15 @@ symbol = " "
 [gradle]
 symbol = " "
 
+# custom
+
+# [directory.substitutions]
+# "Documents" = "󰈙 "
+# "Downloads" = " "
+# "Music" = "󰝚 "
+# "Pictures" = " "
+# "Developer" = " "
+
 [time]
 disabled = false
 time_format = "%I:%M %p"
@@ -292,7 +301,7 @@ style = 'bold red'
 disabled = false
 min_time = 50
 show_milliseconds = true
-format = 'took [$duration](bold blue) at '
+format = '[ $duration](bold blue) at '
 
 [fill]
 symbol = ' '

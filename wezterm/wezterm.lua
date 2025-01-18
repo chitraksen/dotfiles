@@ -13,9 +13,6 @@ config.window_background_opacity = 0.75
 config.macos_window_background_blur = 25
 config.text_background_opacity = 0.6
 
--- wallpaper
--- config.window_background_image = "/Users/chitraksen/Developer/nvim_wall_op.jpg"
-
 -- wezterm horizontal split
 config.keys = {
 	-- This will create a new split and run your default program inside it
