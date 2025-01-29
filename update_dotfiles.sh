@@ -10,10 +10,7 @@ RESET="\033[0m"  # Reset all attributes
 # copy all dotfiles to destination
 cp ~/.config/ghostty/config ./ghostty/config
 cp ~/.config/fastfetch/config.jsonc ./fastfetch/config.jsonc
-cp ~/.config/nvim/init.lua ./nvim/init.lua
-cp ~/.config/nvim/lua/custom/plugins/init.lua ./nvim/plugins/init.lua
-cp ~/.config/nvim/lua/custom/plugins/lualine.lua ./nvim/plugins/lualine.lua
-cp ~/.config/nvim/lua/custom/plugins/render-markdown.lua ./nvim/plugins/render-markdown.lua
+cp ~/.config/nvim ./nvim
 cp ~/.hushlogin ./.hushlogin
 cp ~/.config/starship.toml ./starship.toml
 cp ~/.config/wezterm/wezterm.lua ./wezterm/wezterm.lua

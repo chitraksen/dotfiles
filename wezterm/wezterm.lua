@@ -11,9 +11,20 @@ config.font_size = 13
 config.color_scheme = "tokyonight_night"
 config.window_background_opacity = 0.75
 config.macos_window_background_blur = 25
-config.text_background_opacity = 0.6
+config.text_background_opacity = 0.5
 
--- wezterm horizontal split
+-- Tab bar and window appearance
+config.tab_bar_at_bottom = true
+config.use_fancy_tab_bar = false
+config.window_decorations = "RESIZE"
+config.inactive_pane_hsb = { brightness = 0.65 }
+config.native_macos_fullscreen_mode = true
+
+-- testing
+config.show_tabs_in_tab_bar = true
+
+-- custom keybinds
+config.leader = { key = "a", mods = "CTRL" }
 config.keys = {
 	-- This will create a new split and run your default program inside it
 	{
@@ -22,29 +33,6 @@ config.keys = {
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 }
-
--- pane resizing
-config.leader = { key = "a", mods = "CTRL" }
-config.keys = {
-	{
-		key = "H",
-		mods = "LEADER",
-		action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
-	},
-	{
-		key = "J",
-		mods = "LEADER",
-		action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
-	},
-	{ key = "K", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
-	{
-		key = "L",
-		mods = "LEADER",
-		action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
-	},
-}
-
-config.native_macos_fullscreen_mode = true
 
 -- nerd font
 config.font = wezterm.font("JetBrains Mono") -- { weight = 'Bold', italic = true }
@@ -61,18 +49,15 @@ config.font_rules = {
 	},
 }
 
--- tab bar
-config.tab_bar_at_bottom = false
-
 -- window padding
 config.window_padding = {
-	left = 30,
-	right = 30,
-	top = 30,
-	bottom = 30,
+	left = 20,
+	right = 20,
+	top = 20,
+	bottom = 20,
 }
 
--- center window on startup
+-- center and fill window on startup
 wezterm.on("gui-startup", function(_)
 	local screen = wezterm.gui.screens().active
 	local ratio = 1
@@ -84,7 +69,7 @@ wezterm.on("gui-startup", function(_)
 			origin = "ActiveScreen",
 		},
 	})
-	window:gui_window():set_inner_size(width, height)
+	window:gui_window():set_inner_size(width, (height - 50))
 end)
 
 -- and finally, return the configuration to wezterm
