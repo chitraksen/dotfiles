@@ -1,0 +1,18 @@
+# login message
+fastfetch
+
+# terminal color
+export CLICOLOR=1;
+export LSCOLORS=ExGxBxDxCxEgEdCxgxcxdx;
+
+# shortcut to send ghostty notification, for long commands
+alias sc-notify-task-complete='echo -e "\033]9;Task complete.\007"'
+
+# only eval starship if not default apple term
+if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
+    eval "$(starship init zsh)"
+fi
+
+# ls options
+alias ll="ls -la"
+alias la="ls -a"

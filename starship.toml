@@ -149,9 +149,6 @@ symbol = " "
 [hg_branch]
 symbol = " "
 
-[hostname]
-ssh_symbol = " "
-
 [java]
 symbol = " "
 
@@ -296,6 +293,18 @@ style = 'bold green'
 [[battery.display]]
 threshold = 30
 style = 'bold red'
+
+[username]
+style_user = 'bold yellow'
+style_root = 'bold red'
+format = '[$user]($style)@'
+disabled = false
+
+[hostname]
+ssh_symbol = "󰁥 "
+style = 'bold yellow'
+format = '[$hostname]($style) in '
+disabled = false
 
 [cmd_duration]
 disabled = false

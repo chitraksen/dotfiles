@@ -8,12 +8,13 @@ BOLD="\033[1m"
 RESET="\033[0m"  # Reset all attributes
 
 # copy all dotfiles to destination
-cp ~/.config/ghostty/config ./ghostty/config
-cp ~/.config/fastfetch/config.jsonc ./fastfetch/config.jsonc
+cp -R ~/.config/ghostty ./
+cp -R ~/.config/fastfetch ./
 cp -R ~/.config/nvim ./
-cp ~/.hushlogin ./.hushlogin
-cp ~/.config/starship.toml ./starship.toml
-cp ~/.config/wezterm/wezterm.lua ./wezterm/wezterm.lua
+cp -R ~/.config/wezterm ./
+cp ~/.config/starship.toml ./
+cp ~/.zsh_config ./
+cp ~/.hushlogin ./
 
 echo -e "${BOLD}${GREEN}Files copied.${RESET}"
 
