@@ -2,7 +2,7 @@
 run from cloned dir
 ```bash
 chmod +x update_dotfiles.sh
-./update_dotfiles.sh
+./update_dotfiles.sh "commit message goes here"
 ```
 
 # idea
